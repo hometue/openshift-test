@@ -11,3 +11,4 @@ RUN pip install django-cors-headers
 WORKDIR /src
 COPY ./ ./
 CMD python manage.py runserver 0.0.0.0:8000
+EXPOSE 8000
