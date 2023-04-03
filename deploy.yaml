@@ -4,13 +4,16 @@ metadata:
   name: recipe-ui
 spec:
   replicas: 1
-    - name: recipe-ui
-      image: ui-docker-image
-      ports:
-        - name: http
-          containerPort: 8080
-          protocol: http
-      resources:
-        limits:
-          memory: "128Mi"
-          cpu: "500m"
+  template:
+    spec:
+    containters:
+      - name: recipe-ui
+        image: ui-docker-image
+        ports:
+          - name: http
+            containerPort: 8080
+            protocol: http
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
