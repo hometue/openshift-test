@@ -35,3 +35,16 @@ ports:
     targetPort: 8080
 selector:
   app: recipe-web
+
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: web-route
+spec:
+  host: recipe-ui.<Ingress_Domain>
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: recipe-web
