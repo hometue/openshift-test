@@ -3,13 +3,13 @@ metadata:
   name: recipeUI
 components:
   -name: uiImage
-  -dockerfile:
+  dockerfile:
     -buildContext: ./recipe-webUI/
     -uri: ./recipe-webUI/Dockerfile
   -name: uiContainer
-  -container:
+  container:
     -image: uiImage
-    -endpoints:
+    endpoints:
       -name: httpPort
       -targetPort: 8080
       -exposure: public
