@@ -9,13 +9,15 @@ components:
         buildContext: ./recipe-webUI/
         uri: ./recipe-webUI/Dockerfile
   - name: ui-container
-    container:
-      image: ui-docker-image
-      endpoints:
-        - name: http
-          targetPort: 8080
-          exposure: public
-          protocol: http
+    kubernetes:
+      attributes:
+        deployment/replicas: 1
+        deployment/cpuLimit: '100m'
+        deployment/cpuRequest: 10m
+        deployment/memoryLimit: 100Mi
+        deployment/memoryRequest: 50Mi
+        deployment/container-port: 8080
+      uri: deploy.yaml
 commands:
   - id: build-image
     apply:
