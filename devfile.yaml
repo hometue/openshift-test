@@ -12,7 +12,7 @@ components:
     container:
       image: ui-docker-image
       endpoints:
-        - name: http-port
+        - name: http
           targetPort: 8080
           exposure: public
           protocol: http
