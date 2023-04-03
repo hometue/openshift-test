@@ -9,13 +9,6 @@ components:
         buildContext: ./webUI/
         uri: ./Dockerfile
   - name: ui-container
-    attributes:
-      deployment/replicas: 1
-      deployment/cpuLimit: '100m'
-      deployment/cpuRequest: 10m
-      deployment/memoryLimit: 100Mi
-      deployment/memoryRequest: 50Mi
-      deployment/container-port: 8080
     kubernetes:
       uri: deploy.yaml
 commands:
