@@ -16,3 +16,18 @@ components:
           targetPort: 8080
           exposure: public
           protocol: http
+commands:
+  - id: build-image
+    apply:
+      component: ui-docker
+  - id: run-container
+    apply:
+      component: ui-container
+  -id: deploy
+    composite:
+      commands:
+        - build-image
+        - run-container
+      group:
+        kind: deploy
+        isDefault: true
