@@ -6,8 +6,8 @@ components:
     image:
       imageName: ui-docker-image
       dockerfile:
-        buildContext: ./recipe-webUI/
-        uri: ./recipe-webUI/Dockerfile
+        buildContext: ./webUI/
+        uri: ./webUI/Dockerfile
   - name: ui-container
     attributes:
       deployment/replicas: 1
