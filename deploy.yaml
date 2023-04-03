@@ -39,10 +39,8 @@ selector:
 ---
 apiVersion: route.openshift.io/v1
 kind: Route
-metadata:
-  name: web-route
 spec:
-  host: recipe-ui.<Ingress_Domain>
+  subdomain: recipe-view
   port:
     targetPort: 8080
   to:
