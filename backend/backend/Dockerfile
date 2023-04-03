@@ -7,7 +7,7 @@ FROM python:3.11
 
 RUN set -x \
     && addgroup --system --gid $GID djangouser || true \
-    && adduser --system --disabled-login --ingroup nginx --no-create-home --home /nonexistent --gecos "nginx user" --shell /bin/false --uid $UID djangouser || true \
+    && adduser --system --disabled-login --ingroup djangouser --no-create-home --home /nonexistent --gecos "djangouser user" --shell /bin/false --uid $UID djangouser || true
 
 RUN pip install django
 RUN pip install mysqlclient
@@ -19,5 +19,6 @@ WORKDIR /src
 COPY ./ ./
 RUN python manage.py migrate
 RUN chmod 777 .
+USER $UID
 CMD python manage.py runserver 0.0.0.0:8000
 EXPOSE 8000

@@ -1,0 +1,15 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  react:
+    build: ./recipe-webUI/
+    ports:
+      - 3000:3000
+    restart: always
+  django:
+    build: ./recipe-backend/recipe_backend/
+    ports:
+      - 8000:8000
+    restart: always

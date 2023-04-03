@@ -6,6 +6,8 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  fetch("./api/").then(res => res.text()).then(res=> console.log(res));
+
   return (
     <div className="App">
       <div>

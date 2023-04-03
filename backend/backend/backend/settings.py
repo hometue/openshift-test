@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure--l%=xl*)xp6b2wjxxdu5extp!ewtcktn^%wq=1(g43*oe32pj3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['openshift-test-backend-hometue-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com']
+ALLOWED_HOSTS = ['openshift-test-backend-hometue-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
+                 '127.0.0.1']
 
 
 # Application definition

@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  creationTimestamp: null
+  name: openshift-test-default
+spec:
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              io.kompose.network/openshift-test-default: "true"
+  podSelector:
+    matchLabels:
+      io.kompose.network/openshift-test-default: "true"
