@@ -4,11 +4,11 @@ metadata:
 components:
   - name: UI-docker
     image:
+      imageName: UI-docker-image
       dockerfile:
         buildContext: ./recipe-webUI/
         uri: ./recipe-webUI/Dockerfile
-        imageName: UI-docker-image
-  - name: uiContainer
+  - name: UI-Container
     container:
       image: UI-docker-image
       endpoints:
