@@ -1,0 +1,16 @@
+schemaVersion: 2.2.0
+metadata:
+  name: recipeUI
+components:
+  -name: uiImage
+  -dockerfile:
+    -buildContext: ./recipe-webUI/
+    -uri: ./recipe-webUI/Dockerfile
+  -name: uiContainer
+  -container:
+    -image: uiImage
+    -endpoints:
+      -name: httpPort
+      -targetPort: 8080
+      -exposure: public
+      -protocol: http
