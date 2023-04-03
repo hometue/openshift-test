@@ -1,0 +1,16 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: recipe-ui
+spec:
+  replicas: 1
+    - name: recipe-ui
+      image: ui-docker-image
+      ports:
+        - name: http
+          containerPort: 8080
+          protocol: http
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
