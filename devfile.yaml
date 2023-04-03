@@ -2,13 +2,14 @@ schemaVersion: 2.2.0
 metadata:
   name: recipeUI
 components:
-  - name: uiImage
-    dockerfile:
-      buildContext: ./recipe-webUI/
-      uri: ./recipe-webUI/Dockerfile
+  - name: UIImage
+    image:
+      dockerfile:
+        buildContext: ./recipe-webUI/
+        uri: ./recipe-webUI/Dockerfile
   - name: uiContainer
     container:
-      image: uiImage
+      image: UIImage
       endpoints:
         - name: httpPort
           targetPort: 8080
