@@ -23,7 +23,7 @@ commands:
   - id: run-container
     apply:
       component: ui-container
-  -id: deploy
+  - id: deploy
     composite:
       commands:
         - build-image
