@@ -2,11 +2,10 @@
 version: '3.1'
 
 services:
-
   react:
     build: ./webUI/
     ports:
-      - 3000:3000
+      - 8080:8080
     restart: always
   django:
     build: ./backend/backend/

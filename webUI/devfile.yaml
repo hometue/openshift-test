@@ -6,7 +6,7 @@ components:
     image:
       imageName: ui-docker-image
       dockerfile:
-        buildContext: ./webUI/
+        buildContext: .
         uri: ./Dockerfile
   - name: ui-container
     kubernetes:
