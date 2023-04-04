@@ -12,7 +12,7 @@ spec:
       labels:
         app: recipe-web
     spec:
-      containters:
+      containers:
         - name: recipe-ui
           image: ui-docker-image
           ports:
