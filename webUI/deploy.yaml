@@ -12,13 +12,13 @@ spec:
       labels:
         app: recipe-web
     spec:
-      containters:
+      containers:
         - name: recipe-ui
           image: ui-docker-image
           ports:
-            - name: http
+            - name: tcp
               containerPort: 8080
-              protocol: tcp
+              protocol: TCP
           resources:
             limits:
               memory: "128Mi"
@@ -31,7 +31,7 @@ spec:
 ports:
   - name: http
     port: 8080
-    protocol: tcp
+    protocol: TCP
     targetPort: 8080
 selector:
   app: recipe-web
