@@ -3,6 +3,13 @@ metadata:
   name: recipeUI
 components:
   - name: ui-docker
+    attributes:
+      deployment/replicas: 1
+      deployment/cpuLimit: '100m'
+      deployment/cpuRequest: 10m
+      deployment/memoryLimit: 100Mi
+      deployment/memoryRequest: 50Mi
+      deployment/container-port: 8080
     image:
       imageName: ui-docker-image
       dockerfile:
