@@ -13,10 +13,10 @@ spec:
         app: recipe-web
     spec:
       containers:
-        - name: recipe-ui
+        - name: recipe-web
           image: ui-docker-image
           ports:
-            - name: tcp
+            - name: http
               containerPort: 8080
               protocol: TCP
           resources:
