@@ -13,7 +13,7 @@ spec:
         app: recipe-web
     spec:
       containers:
-        - name: recipe-web
+        - name: recipe-ui
           image: ui-docker-image
           ports:
             - name: http
@@ -27,9 +27,11 @@ spec:
 ---
 kind: Service
 apiVersion: v1
+metadata:
+  app: recipe-ui
 spec:
 ports:
-  - name: http
+  - name: http-8080
     port: 8080
     protocol: TCP
     targetPort: 8080
