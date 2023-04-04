@@ -12,13 +12,13 @@ spec:
       labels:
         app: recipe-web
     spec:
-      containers:
+      containters:
         - name: recipe-ui
           image: ui-docker-image
           ports:
             - name: http
               containerPort: 8080
-              protocol: TCP
+              protocol: tcp
           resources:
             limits:
               memory: "128Mi"
@@ -37,7 +37,6 @@ selector:
   app: recipe-web
 
 ---
-
 apiVersion: route.openshift.io/v1
 kind: Route
 spec:

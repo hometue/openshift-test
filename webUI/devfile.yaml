@@ -13,7 +13,6 @@ components:
     image:
       imageName: ui-docker-image
       dockerfile:
-        buildContext: .
         uri: ./Dockerfile
   - name: ui-container
     kubernetes:
