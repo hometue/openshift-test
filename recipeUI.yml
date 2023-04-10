@@ -7,8 +7,12 @@ services:
     ports:
       - 8080:8080
     restart: always
+    labels:
+      kompose.service.expose: true
   django:
     build: ./backend/backend/
     ports:
       - 8000:8000
     restart: always
+    labels:
+      kompose.service.expose: true
