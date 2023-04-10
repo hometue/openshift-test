@@ -8,7 +8,7 @@ Then run the following commands:
     oc create -f django-buildconfig.yaml
     oc create -f django-deploymentconfig.yaml
     oc create -f django-service.yaml
-    oc create -f django-route.yaml
+    oc create -f react-buildconfig.yaml
     oc create -f react-deploymentconfig.yaml
     oc create -f react-route.yaml
     oc create -f react-service.yaml
