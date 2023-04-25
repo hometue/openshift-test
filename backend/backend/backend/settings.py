@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dockertest',
+        'NAME': os.getenv("MYSQL_DB"),
         'USER': os.getenv("MYSQL_USERNAME"),
-        'PASSWORD': '',
-        'HOST':'host.docker.internal',
-        'PORT':'3306',
+        'PASSWORD': os.getenv("MYSQL_PASSWORD"),
+        'HOST': os.getenv("MYSQL_HOSTNAME"),
+        'PORT': int(os.getenv("MYSQL_PORT")),
     }
 }
 

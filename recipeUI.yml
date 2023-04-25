@@ -15,9 +15,15 @@ services:
       args:
         MYSQL_USERNAME: ${MYSQL_USERNAME}
         MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        MYSQL_HOSTNAME: ${MYSQL_HOSTNAME}
+        MYSQL_DB: ${MYSQL_DB}
+        MYSQL_PORT: ${MYSQL_PORT}
     ports:
       - 8000:8000
     restart: always
     environment:
       - MYSQL_USERNAME=${MYSQL_USERNAME}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_HOSTNAME=${MYSQL_HOSTNAME}
+      - MYSQL_DB=${MYSQL_DB}
+      - MYSQL_PORT=${MYSQL_PORT}

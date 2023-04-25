@@ -1,9 +1,10 @@
-To push this to Openshift, install kompose: https://kompose.io/
+To push this to Openshift, install kompose: https://kompose.io/ and openshift CLI tools and Docker Desktop.
 Clone the repository or download this as a zip.
+Copy .env.example into .env and add the database information. No quotation marks needed.
 Then run the following commands:
 
-    kompose convert -f recipeUI.yml --provider openshift --build build-config --build-repo https://github.com/hometue/openshift-test.git
-    oc create -f production-env-configmap.yaml
+    docker compose -f recipeUI.yml config > stack.yml
+    kompose convert -f stack.yml --provider openshift --build build-config --build-repo https://github.com/hometue/openshift-test.git
     oc create -f django-imagestream.yaml
     oc create -f react-imagestream.yaml
     oc create -f django-buildconfig.yaml
