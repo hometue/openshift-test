@@ -1,2 +1,3 @@
 .vscode
-production.env
+.env
+stack.yml

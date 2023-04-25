@@ -3,6 +3,7 @@ Clone the repository or download this as a zip.
 Then run the following commands:
 
     kompose convert -f recipeUI.yml --provider openshift --build build-config --build-repo https://github.com/hometue/openshift-test.git
+    oc create -f production-env-configmap.yaml
     oc create -f django-imagestream.yaml
     oc create -f react-imagestream.yaml
     oc create -f django-buildconfig.yaml
