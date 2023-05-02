@@ -1,3 +1,4 @@
 .vscode
 .env
 stack.yml
+*.yaml
