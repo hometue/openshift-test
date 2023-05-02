@@ -18,10 +18,15 @@ Then run the following commands:
 
 Important: Imagestream files must be pushed before anything else, because every other file will refer to it and without the image there can be no container.
 
-If you want to specify the subdomain, you can do so by adding subdomain in the react-route.yaml file as such:
+If you want to specify the subdomain, you can do so by adding subdomain in react-route.yaml file as such:
 
     spec:
       subdomain: this-is-my-subdomain
 This allows you to specify the subdomain without specifying the whole domain name.
 
 To communicate between 2 containers, the container name in the Docker compose yml file can be used, similar to how it is done in Docker compose. This can be seen in the Nginx configuration file in ./webUI/default.conf, where Nginx is setup to proxy forward all ./api requests to http://django:8000.
+
+If accessing via https is desired, because of security or perhaps because browser default is https when we key in domain name, add this to react-route.yaml file:
+    tls:
+	    termination: edge
+	    insecureEdgeTerminationPolicy: Allow
