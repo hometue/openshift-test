@@ -74,14 +74,22 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# If using external databasse
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': os.getenv("MYSQL_DB"),
+#         'USER': os.getenv("MYSQL_USERNAME"),
+#         'PASSWORD': os.getenv("MYSQL_PASSWORD"),
+#         'HOST': os.getenv("MYSQL_HOSTNAME"),
+#         'PORT': int(os.getenv("MYSQL_PORT")),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv("MYSQL_DB"),
-        'USER': os.getenv("MYSQL_USERNAME"),
-        'PASSWORD': os.getenv("MYSQL_PASSWORD"),
-        'HOST': os.getenv("MYSQL_HOSTNAME"),
-        'PORT': int(os.getenv("MYSQL_PORT")),
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "mydatabase",
     }
 }
 
